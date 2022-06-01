@@ -1,5 +1,4 @@
- createAutoComplete({
-    root: document.querySelector('.autocomplete'),
+const autoCompleteConfig = {
     renderOption(film) {
         const imgSrc =
             film.Poster === 'N/A' ? 'assets/film-placeholder.jpg' : film.Poster;
@@ -10,6 +9,7 @@
         `;
     },
     onOptionSelect(film) {
+        document.querySelector('.tutorial').classList.add('is-hidden');
         onFilmSelect(film);
     },
     inputValue(film) {
@@ -28,6 +28,16 @@
         }
         return response.data.Search;
     }
+};
+
+createAutoComplete({
+    ...autoCompleteConfig,
+    root: document.querySelector('#left-autocomplete'),
+});
+
+createAutoComplete({
+    ...autoCompleteConfig,
+    root: document.querySelector('#right-autocomplete')
 });
 
 const onFilmSelect = async (film) => {
