@@ -80,18 +80,29 @@ const runComparison = () => {
 
         if (leftSideValue > rightSideValue) {
             rightStat.classList.remove('is-primary');
+            rightStat.classList.remove('is-success');
             rightStat.classList.add('is-warning');
+
             leftStat.classList.remove('is-primary');
+            leftStat.classList.remove('is-warning');
             leftStat.classList.add('is-success');
         } else if (leftSideValue < rightSideValue) {
             leftStat.classList.remove('is-primary');
+            leftStat.classList.remove('is-success')
             leftStat.classList.add('is-warning');
+
             rightStat.classList.remove('is-primary');
+            rightStat.classList.remove('is-warning');
             rightStat.classList.add('is-success');
         } else if (leftSideValue == rightSideValue) {
              leftStat.classList.remove('is-primary');
+             leftStat.classList.remove('is-success');
+             leftStat.classList.remove('is-warning')
              leftStat.classList.add('is-light');
+             
              rightStat.classList.remove('is-primary');
+             rightStat.classList.remove('is-success');
+             rightStat.classList.remove('is-warning');
              rightStat.classList.add('is-light');
         } else {
              rightStat.classList.remove('is-primary');
